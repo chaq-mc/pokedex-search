@@ -18,7 +18,7 @@ export function useGetPokemonByName(name: string) {
   useEffect(() => {
     // upon mount or name change, if status is uninitialized, send a request
     // for the pokemon name
-    if (status === undefined) {
+    if (status === undefined && name.length !== 0) {
       dispatch(fetchPokemonByName(name));
     }
   }, [status, name, dispatch]);
