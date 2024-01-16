@@ -28,6 +28,9 @@ export const pokemonSlice = createSlice({
         updatePokemon: (state, action: PayloadAction<Pokemon, string>) => {
             state.dataByName[action.payload.name] = action.payload;
             state.name = action.payload.name
+        },
+        updatePokemonByName: (state, action: PayloadAction<string>) => {
+            state.name = action.payload
         }
     },
     extraReducers: (builder) => {
@@ -52,7 +55,7 @@ export const pokemonSlice = createSlice({
       }
 });
 
-export const {updatePokemon} = pokemonSlice.actions;
+export const {updatePokemon, updatePokemonByName} = pokemonSlice.actions;
 
 export const selectStatusByName = (state: RootState, name: string) =>
   state.pokemon.statusByName[name];
