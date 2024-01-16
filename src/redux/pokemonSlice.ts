@@ -1,19 +1,27 @@
-import { createSlice, createAsyncThunk, isRejectedWithValue } from "@reduxjs/toolkit"
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import axios from 'axios'
 import { Pokemon } from "../utils/types"
 import { RootState } from '../store'
 
 export const fetchPokemonByName = createAsyncThunk<Pokemon, string>(
     'pokemon/fetchPokemonByName',
-    async(pokemonName: string) => {
-        try {
-            const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
-            console.log(res.data);
-            return res.data;
-        } catch (err) {
-            return isRejectedWithValue(err);
+    // async(pokemonName: string, { rejectedWithValue }) => {
+    //     try {
+    //         const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+    //         console.log(res.data);
+    //         return res.data;
+    //      } catch(err) {
+    //         return rejectedWithValue(err.data)
+    //      }   
+    // }
+    async (pokemonName, { rejectWithValue }) => {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+        const data = await response.json();
+        if (response.status < 200 || response.status >= 300) {
+          return rejectWithValue(data);
         }
-    }
+        return data;
+      }
 );
 
 type RequestState = "pending" | "fulfilled" | "rejected";
