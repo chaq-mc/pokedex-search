@@ -13,7 +13,7 @@ export const Search = () => {
 
     const handlePokemonFetch = (event: React.FormEvent) => {
         event.preventDefault();
-        setSearchInput(input);
+        setSearchInput(input.toLocaleLowerCase());
     }
 
     return (

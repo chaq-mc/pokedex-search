@@ -4,7 +4,8 @@ import { RootState, AppDispatch } from "../store";
 import {
   fetchPokemonByName,
   selectStatusByName,
-  selectDataByName
+  selectDataByName,
+  updatePokemon
 } from "../redux/pokemonSlice";
 
 export function useGetPokemonByName(name: string) {
@@ -20,6 +21,8 @@ export function useGetPokemonByName(name: string) {
     // for the pokemon name
     if (status === undefined && name.length !== 0) {
       dispatch(fetchPokemonByName(name));
+    } else if (status === 'fulfilled' && data !== undefined) {
+        dispatch(updatePokemon(data))
     }
   }, [status, name, dispatch]);
 
