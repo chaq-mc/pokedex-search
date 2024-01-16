@@ -7,7 +7,7 @@ import {
   selectDataByName
 } from "../redux/pokemonSlice";
 
-export function useGetPokemonByNameQuery(name: string) {
+export function useGetPokemonByName(name: string) {
   const dispatch = useDispatch<AppDispatch>();
   // select the current status from the store state for the provided name
   const status = useSelector((state: RootState) =>
