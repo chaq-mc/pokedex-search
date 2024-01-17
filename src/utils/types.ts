@@ -13,8 +13,13 @@ type MinimalLink = {
     front_default: string;
     front_shiny: string;
     other: {
-      dream_world: unknown;
-      "official-artwork": unknown;
+      dream_world: {
+        front_default: string;
+      }
+      "official-artwork": {
+        front_default: string;
+        front_shiny: string;
+      };
     };
     versions: {
       "generation-i": {
@@ -64,7 +69,10 @@ type MinimalLink = {
     abilities: {
       is_hidden: boolean;
       slot: number;
-      ability: MinimalLink;
+      ability: {
+        name: string,
+        url: string
+      };
     }[];
     forms: MinimalLink[];
     game_indices: {
