@@ -105,7 +105,7 @@ type MinimalLink = {
     types: {
       slot: number;
       type: MinimalLink;
-    };
+    }[];
   };
   
   export type PokemonPageResult = {

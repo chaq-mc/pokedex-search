@@ -27,19 +27,54 @@ font-weight: bold;
 letter-spacing: 1px;
 margin-bottom: 5px;
 }
+.abilityParent {
+width: 85%;
+align-items: center;
+display: block;
+}
+.abilityLabel {
+    text-align: center;
+    display: block;
+    margin-bottom: 0;
+}
 
 .abilities {
     width: 20%;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
+    margin-left: 18.75%;
+    display: inline-block;
     align-items: center;
     margin-top: 1rem;
-    flex-direction: row !important;
+    text-align: center;
 }
 
 .abilities .group {
     background-color: #b74555;
+    color: white;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    font-size: 8px;
+    border-radius: 8px;
+}
+
+.spriteLabel {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.sprites {
+    text-align: center;
+}
+
+.types {
+    width: 20%;
+    align-items: center;
+    margin-top: 1rem;
+    text-align: center;
+    float: right;
+}
+
+.types .group {
+    background-color: green;
     color: white;
     padding: 0.5rem;
     margin: 0.5rem;

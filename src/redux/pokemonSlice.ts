@@ -8,6 +8,7 @@ export const fetchPokemonByName = createAsyncThunk<Pokemon, string>(
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
         const data = await response.json();
         if (response.status < 200 || response.status >= 300) {
+          alert("Please enter valid Pokemon Name");  
           return rejectWithValue(response.status);
         }
         
