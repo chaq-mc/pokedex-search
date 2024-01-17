@@ -1,30 +1,34 @@
-# React + TypeScript + Vite
+# Pokedex Search
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This is a Pokedex themed application that allows for searching of all Pokemon that are provided within the Pokemon API. 
+([Pokemon API Docs](https://pokeapi.co/docs/v2))
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Steps to Running Application
 
-## Expanding the ESLint configuration
+Ensure that the latest stable version of **Node.js** is installed on your machine as npm is required to run the application and retrieve necessary dependencies.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+After cloning, open a terminal and navigate to the base project directory and run:
 
-- Configure the top-level `parserOptions` property like this:
+### `npm install`
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+This command ensures that all dependencies needed to run the application are loaded, and any missing dependencies or packages will be installed via the npm package manager.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+After all packages and dependencies have been loaded run:
+### `npm run dev`
+
+Runs the app in the development mode.\
+The terminal will print out the localhost address: 
+"**http//localhost:{portNumber}**"
+ You then can browse to this address from any local web browser and begin searching for Pokemon.
+
+## Future Updates
+
+- Given more time I would implement functionality to traverse the evolution tree.
+- Add more automated testing beyond business logic
+- Update the UI to include basic Pokemon stat displays
+## Concurent Environment Update
+
+- Some changes I would make for this application to be optimized for concurrent development:
+		- While I made a component based design my priority, I believe this could be even further expanded within the application. This would not only help optimize the application for concurrent development but also increase code reusability. 
