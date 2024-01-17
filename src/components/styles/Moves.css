@@ -1,0 +1,69 @@
+html {
+    --dark-gray: rgb(90, 90, 90);
+    --light-gray: rgb(148, 148, 148);
+    --focus-blue: rgb(69, 159, 189);
+  }
+
+.movesContainer {
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    width: 75%;
+    overflow: auto;
+    scrollbar-width: thin;
+    height: auto;
+    max-height: 150px;
+}
+
+.movesList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+.movesLabel {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid var(--light-gray);
+    border-radius: 50px;
+    background-color: var(--dark-gray);
+  }
+
+.movesLabel:hover {
+    background: var(--light-gray);
+  }
+
+.movesItems {
+list-style: none;
+padding-left: 0;
+}
+
+.movesContainer ul ul li{
+    padding: 10px;
+    background: var(--light-gray);
+    border-radius: 50px;
+    cursor: pointer;
+  }
+
+  .movesContainer ul ul li:hover{
+    background: var(--light-gray);
+  }
+
+ .movesContainer input[type="checkbox"]{
+    position: absolute;
+    left: -9999px;
+  }
+  
+  .movesContainer input[type="checkbox"] ~ ul{
+    height: 0;
+    transform: scaleY(0);
+  }
+  
+ .movesContainer input[type="checkbox"]:checked ~ ul{
+    height: 100%;
+    transform-origin: top;
+    transition: transform .2s ease-out;
+    transform: scaleY(1); 
+  }
