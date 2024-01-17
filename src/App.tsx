@@ -1,16 +1,20 @@
 import { Search } from './components/SearchBar';
-import { SearchHistory } from './components/SearchHistory';
 import { PokemonCard } from './components/PokemonCard';
+import pokemonLogo from './assets/pokemon-logo.png'
 import './App.css'
 
 function App() {
 
   return (
     <>
-      <h1>Pokedex</h1>
+    <div>
+      <div className='header'>
+       <img src={pokemonLogo} className='logoImg' />
+      </div>
       <Search/>
-      <SearchHistory/>
       <PokemonCard/>
+    </div>
+      
     </>
   )
 }
