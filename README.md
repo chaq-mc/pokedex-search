@@ -23,6 +23,8 @@ The terminal will print out the localhost address:
 "**http//localhost:{portNumber}**"
  You then can browse to this address from any local web browser and begin searching for Pokemon.
 
+Start by typing a valid Pokemon name into the search box and pressing **Enter**.
+
 ## Future Updates
 
 - Given more time I would implement functionality to traverse the evolution tree.
